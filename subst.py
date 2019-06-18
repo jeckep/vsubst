@@ -34,10 +34,15 @@ def main():
 
     replaces = {}
     for line in open(args.fname):
-        src, dst = [s.strip() for s in line.split(DELIM)]
-        replaces[src] = dst
+        if is_not_blank(line) and not line.strip().startswith("#"):
+            src, dst = [s.strip() for s in line.split(DELIM)]
+            replaces[src] = dst
 
     replace_in_files(args.src_path, args.dst_path, replaces)
+
+
+def is_not_blank(line):
+    return bool(line and line.strip())
 
 
 if __name__ == '__main__':
