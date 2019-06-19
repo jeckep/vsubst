@@ -24,7 +24,8 @@ def replace_in_file(full_src_path, full_dst_path, replaces):
         data = data.replace('${' + _from + '}', _to)
 
     dirname, _ = os.path.split(full_dst_path)
-    os.makedirs(dirname)
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
 
     with open(full_dst_path, 'w') as f:
         f.write(data)
