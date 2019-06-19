@@ -5,7 +5,6 @@ DELIM = '='
 
 
 def replace_in_files(src, dst, replaces):
-    print src
     if os.path.isfile(src):
         replace_in_file(src, dst, replaces)
     else:
@@ -33,14 +32,14 @@ def replace_in_file(full_src_path, full_dst_path, replaces):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--fname', help='fname')
+    parser.add_argument('--props', help='props')
     parser.add_argument('--src_path', help='src_path')
     parser.add_argument('--dst_path', help='src_path')
 
     args = parser.parse_args()
 
     replaces = {}
-    for line in open(args.fname):
+    for line in open(args.props):
         if is_not_blank(line) and not line.strip().startswith("#"):
             src, dst = [s.strip() for s in line.split(DELIM)]
             replaces[src] = dst
