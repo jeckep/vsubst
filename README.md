@@ -1,7 +1,7 @@
 ## **vsubst** - Simple variables substitution script
 
 Script for performing variables substitution from properties file. 
-It can be applied for one file of for directory. It substitutes variable in  **${VAR_NAME}** format.
+It can be applied for one file or for directory. It substitutes variable in  **${VAR_NAME}** format.
 
 ## Usage
 
