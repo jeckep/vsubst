@@ -1,3 +1,6 @@
+![Docker Build Status](https://img.shields.io/docker/cloud/build/jeckep/vsubst.svg)
+![Image Size](https://img.shields.io/microbadger/image-size/jeckep/vsubst/latest.svg)
+
 ## **vsubst** - Simple variables substitution script
 
 Script for performing variables substitution from properties file. 
